@@ -1,25 +1,19 @@
 server:
   port: 8761
 
+spring:
+  application:
+    name: eureka-server
+
 eureka:
-  instance:
-    hostname: eureka-server
-    prefer-ip-address: true
   client:
     register-with-eureka: false
     fetch-registry: false
   server:
-    enable-self-preservation: false
-    eviction-interval-timer-in-ms: 60000
-    wait-time-in-ms-when-sync-empty: 0
+    wait-time-in-ms-when-sync-empty: 5
 
 management:
   endpoints:
     web:
       exposure:
         include: health, info
-
-logging:
-  level:
-    com.netflix.eureka: INFO
-    org.springframework: INFO
